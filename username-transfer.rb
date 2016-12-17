@@ -5,7 +5,7 @@ release = {
   cookie: 'FILL_ME_IN',
   csrftoken: 'FILL_ME_IN',
   email: 'FILL_ME_IN',
-  username: 'FILL_ME_IN',
+  username: 'FILL_ME_IN', # this is a temporary username. you can make it random, or whatever but it needs to be unclaimed
 }
 capture = {
   cookie: 'FILL_ME_IN',
@@ -20,13 +20,13 @@ recapture = release.merge({
 def change_username(args)
   response = RestClient.post("https://www.instagram.com/accounts/edit/",
     {
-      first_name: 'FILL_ME_IN',
+      first_name: '',
       email: args[:email],
       username: args[:username],
-      phone_number: 'FILL_ME_IN',
-      gender: 'FILL_ME_IN',
-      biography: 'FILL_ME_IN',
-      external_url: 'FILL_ME_IN',
+      phone_number: '',
+      gender: 'FILL_ME_IN', // 1=male, 2=female, 3=not specified
+      biography: '',
+      external_url: '',
       chaining_enabled: 'on',
     },
     headers={
